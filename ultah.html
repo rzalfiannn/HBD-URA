@@ -11,7 +11,7 @@
             padding: 20px;
             color: white;
             margin: 0;
-            overflow-y: auto; /* ✅ Aktifkan scroll vertikal */
+            overflow-y: auto;
         }
 
         h1 {
@@ -49,6 +49,29 @@
             box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
         }
 
+        .wish {
+            margin-top: 40px;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 1;
+            position: relative;
+        }
+
+        .wish h2 {
+            color: #ff99cc;
+            margin-bottom: 10px;
+        }
+
+        .wish p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #eee;
+        }
+
         footer {
             margin-top: 30px;
             color: #aaa;
@@ -58,7 +81,6 @@
             padding-bottom: 40px;
         }
 
-        /* Fireworks */
         .firework {
             position: absolute;
             width: 5px;
@@ -84,39 +106,38 @@
 </head>
 <body>
 
-    <?php
-        $nama = "URAAWRRR7";
-        echo "<h1>HAPPY BIRTHDAY  $nama 😝</h1>";
-    ?>
+    <h1>HAPPY BIRTHDAY URAAAWRRR7 😝 🎉</h1>
     <div class="emoji">🎂 🥳 </div>
 
     <div class="gallery">
-        <img src="uin.png" alt="Foto 1">
+        <img src="gn.png" alt="Foto 1">
         <img src="selfie.png" alt="Foto 2">
-        <img src="gn.png" alt="Foto 3">
+        <img src="uin.png" alt="Foto 3">
     </div>
 
     <div class="wish">
-    <h2>WISH</h2>
-    <p>
-        Seperti 3726 mdpl, selalu butuh waktu yang lama untuk mendapatkan sesuatu yang indah"
-    </p>
+        <h2>WISH</h2>
+        <p>"Seperti 3726 mdpl, selalu butuh waktu yang lama untuk mendapatkan sesuatu yang indah"
+            
+        </p>
     </div>
 
     <footer>
-        &copy; <?php echo date("Y"); ?> rejaaa 
+        &copy; 2025 Rejaaa
     </footer>
 
-    <!-- Efek petasan -->
-    <?php
-        for ($i = 0; $i < 20; $i++) {
-            $x = rand(-200, 200) . "px";
-            $y = rand(-200, 200) . "px";
-            $left = rand(0, 100) . "vw";
-            $top = rand(0, 100) . "vh";
-            echo "<div class='firework' style='--x: $x; --y: $y; left: $left; top: $top;'></div>";
+    <!-- Petasan (statik 20 titik) -->
+    <script>
+        for (let i = 0; i < 20; i++) {
+            const f = document.createElement("div");
+            f.className = "firework";
+            f.style.setProperty("--x", `${Math.random() * 400 - 200}px`);
+            f.style.setProperty("--y", `${Math.random() * 400 - 200}px`);
+            f.style.left = `${Math.random() * 100}vw`;
+            f.style.top = `${Math.random() * 100}vh`;
+            document.body.appendChild(f);
         }
-    ?>
+    </script>
 
 </body>
 </html>
